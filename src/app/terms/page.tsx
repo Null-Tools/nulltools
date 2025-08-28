@@ -61,7 +61,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">4. SERVICE AVAILABILITY</h2>
               <p>
-                As we are still in early development stages, service availability may vary. We're working hard to improve stability and performance, but expect occasional downtime for updates and improvements. We'll do our best to communicate planned maintenance in advance.
+                As we are still in early development stages, service availability may vary. We&apos;re working hard to improve stability and performance, but expect occasional downtime for updates and improvements. We&apos;ll do our best to communicate planned maintenance in advance.
               </p>
             </section>
 

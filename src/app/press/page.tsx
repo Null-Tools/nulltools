@@ -128,7 +128,7 @@ export default function PressKit() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">RECENT PRESS RELEASES</h2>
           <div className="space-y-6">
-            {pressReleases.map((release, index) => (
+            {pressReleases.map((release) => (
               <div key={release.title} className="bg-card/30 border border-border rounded-2xl p-6 hover:border-text-secondary/50 transition-all group">
                 <Link href={release.href} className="block">
                   <div className="flex items-start justify-between gap-4">
@@ -155,7 +155,7 @@ export default function PressKit() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">MEDIA ASSETS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mediaAssets.map((asset, index) => (
+            {mediaAssets.map((asset) => (
               <div key={asset.name} className="bg-card/30 border border-border rounded-2xl p-6">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
@@ -192,7 +192,7 @@ export default function PressKit() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">MEDIA CONTACTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {mediaContacts.map((contact, index) => (
+            {mediaContacts.map((contact) => (
               <div key={contact.name} className="bg-card/30 border border-border rounded-2xl p-6">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">

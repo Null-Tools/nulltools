@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Understand website usage and improve our development roadmap</li>
                 <li>Respond to inquiries and support requests</li>
-                <li>Communicate about project updates (only if you've contacted us directly)</li>
+                <li>Communicate about project updates (only if you&apos;ve contacted us directly)</li>
               </ul>
             </section>
 

@@ -113,7 +113,7 @@ export default function Community() {
         <div className="mb-12">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">JOIN THE CONVERSATION</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {communityChannels.map((channel, index) => {
+            {communityChannels.map((channel) => {
               const Icon = channel.icon
               return (
                 <div key={channel.name} className="bg-card/30 border border-border rounded-2xl p-6 hover:border-text-secondary/50 transition-all group">
@@ -145,7 +145,7 @@ export default function Community() {
         <div className="mb-12">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">FOLLOW US</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {socialLinks.map((social, index) => {
+            {socialLinks.map((social) => {
               const Icon = social.icon
               return (
                 <Link
@@ -170,7 +170,7 @@ export default function Community() {
         <div className="mb-12">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">UPCOMING EVENTS</h2>
           <div className="space-y-6">
-            {events.map((event, index) => (
+            {events.map((event) => (
               <div key={event.title} className="bg-card/30 border border-border rounded-2xl p-6">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="flex-1">
@@ -201,7 +201,7 @@ export default function Community() {
             <div>
               <h3 className="text-lg font-nothing text-text-primary mb-4">Be Respectful</h3>
               <p className="text-text-secondary text-sm mb-4">
-                Treat all community members with respect and kindness. We're all here to learn and grow together.
+                Treat all community members with respect and kindness. We&apos;re all here to learn and grow together.
               </p>
               <h3 className="text-lg font-nothing text-text-primary mb-4">Stay On Topic</h3>
               <p className="text-text-secondary text-sm">
@@ -215,7 +215,7 @@ export default function Community() {
               </p>
               <h3 className="text-lg font-nothing text-text-primary mb-4">No Spam</h3>
               <p className="text-text-secondary text-sm">
-                Avoid promotional content, spam, or irrelevant posts that don't add value to the community.
+                Avoid promotional content, spam, or irrelevant posts that don&apos;t add value to the community.
               </p>
             </div>
           </div>

@@ -6,7 +6,7 @@ export default function Support() {
   const supportChannels = [
     {
       name: "Email Support",
-      description: "Send us your questions and we'll get back to you as soon as possible.",
+      description: "Send us your questions and we&apos;ll get back to you as soon as possible.",
       icon: Mail,
       href: "mailto:contact@nulltools.xyz",
       availability: "Best effort",
@@ -27,11 +27,11 @@ export default function Support() {
   const faqItems = [
     {
       question: "What is Null Tools?",
-      answer: "Null Tools is a collection of developer utilities starting with temporary email services. We're building simple tools to solve common development problems."
+      answer: "Null Tools is a collection of developer utilities starting with temporary email services. We&apos;re building simple tools to solve common development problems."
     },
     {
       question: "Is Null Tools free to use?",
-      answer: "We're currently in early development. Pricing and availability details will be announced as our tools become ready for public use."
+      answer: "We&apos;re currently in early development. Pricing and availability details will be announced as our tools become ready for public use."
     },
     {
       question: "How can I stay updated?",
@@ -43,7 +43,7 @@ export default function Support() {
     },
     {
       question: "What tools are you planning to build?",
-      answer: "We're starting with temporary emails (Null Mails), file sharing (Null Drop), and secure payments (Null Vault). More tools will be added based on community needs."
+      answer: "We&apos;re starting with temporary emails (Null Mails), file sharing (Null Drop), and secure payments (Null Vault). More tools will be added based on community needs."
     },
     {
       question: "How do I report bugs or request features?",
@@ -170,7 +170,7 @@ export default function Support() {
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">QUICK CONTACT</h2>
           <div className="bg-card/30 border border-border rounded-2xl p-8 text-center">
             <p className="text-text-secondary mb-6 text-lg">
-              Have a question or want to contribute? We'd love to hear from you!
+              Have a question or want to contribute? We&apos;d love to hear from you!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -24,7 +24,7 @@ export function Testimonials() {
             WHAT DEVELOPERS SAY
           </h2>
           <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto">
-            We're still collecting feedback from our amazing developer community.
+            We&apos;re still collecting feedback from our amazing developer community.
           </p>
         </motion.div>
 

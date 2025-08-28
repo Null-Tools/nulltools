@@ -264,7 +264,7 @@ export default function Careers() {
         </div>
 
         <div className="text-center bg-card/30 border border-border rounded-2xl p-8">
-          <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">DON'T SEE THE RIGHT ROLE?</h2>
+          <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">DON&apos;T SEE THE RIGHT ROLE?</h2>
           <p className="text-text-secondary mb-8">
             We&apos;re always looking for talented people. Send us your resume and tell us how you&apos;d like to contribute.
           </p>

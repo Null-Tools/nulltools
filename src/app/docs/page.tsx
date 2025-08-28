@@ -78,7 +78,7 @@ export default function Documentation() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          {docSections.map((section, index) => {
+          {docSections.map((section) => {
             const Icon = section.icon
             return (
               <div key={section.title} className="bg-card/30 border border-border rounded-2xl p-6">
@@ -144,7 +144,7 @@ export default function Documentation() {
         <div className="mt-12 text-center">
           <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">NEED HELP?</h2>
           <p className="text-text-secondary mb-6">
-            Can't find what you're looking for? Our team is here to help.
+            Can&apos;t find what you&apos;re looking for? Our team is here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
