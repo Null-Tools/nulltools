@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Upload, Mail, Shield } from 'lucide-react'
+import { Upload, Shield } from 'lucide-react'
 import Image from 'next/image'
 
 const products = [
