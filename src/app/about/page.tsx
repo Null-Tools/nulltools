@@ -193,7 +193,7 @@ export default function About() {
         >
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">MEET THE FOUNDER</h2>
           <div className="flex justify-center">
-            {team.map((member, index) => (
+            {team.map((member) => (
               <motion.div 
                 key={member.name} 
                 className="bg-card/30 border border-border rounded-2xl p-8 text-center max-w-md hover:border-text-secondary/50 transition-all group"
@@ -281,7 +281,7 @@ export default function About() {
         >
           <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">WANT TO LEARN MORE?</h2>
           <p className="text-text-secondary mb-8">
-            We'd love to hear from you. Get in touch with any questions or feedback.
+            We&apos;d love to hear from you. Get in touch with any questions or feedback.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
