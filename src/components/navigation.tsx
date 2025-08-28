@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu, X, ExternalLink, Github, Mail } from 'lucide-react'
+import { Menu, ExternalLink, Github, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const navLinks = [

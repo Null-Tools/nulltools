@@ -99,7 +99,7 @@ export function Stats() {
             BUILDING FOR DEVELOPERS
           </h2>
           <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto">
-            We're just getting started on our mission to create better developer tools
+            We&apos;re just getting started on our mission to create better developer tools
           </p>
         </motion.div>
 

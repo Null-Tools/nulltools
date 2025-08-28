@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion'
 import { TypingText } from '@/components/ui/typing-text'
 import { FloatingDots } from '@/components/ui/floating-dots'

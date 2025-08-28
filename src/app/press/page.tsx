@@ -114,7 +114,7 @@ export default function PressKit() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">COMPANY FACTS</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {companyFacts.map((fact, index) => (
+            {companyFacts.map((fact) => (
               <div key={fact.label} className="bg-card/30 border border-border rounded-2xl p-6 text-center">
                 <div className="text-2xl md:text-3xl font-nothing text-text-primary mb-2">
                   {fact.value}

@@ -115,7 +115,7 @@ export default function Documentation() {
               <h3 className="text-lg font-nothing text-text-primary mb-3">1. Get Your API Key</h3>
               <p className="text-text-secondary mb-3">Sign up and get your API key from the dashboard.</p>
               <div className="bg-background/50 border border-border rounded-lg p-4 font-mono text-sm">
-                curl -H "Authorization: Bearer YOUR_API_KEY" https://api.nulltools.xyz/v1/status
+                curl -H &quot;Authorization: Bearer YOUR_API_KEY&quot; https://api.nulltools.xyz/v1/status
               </div>
             </div>
             
@@ -123,8 +123,8 @@ export default function Documentation() {
               <h3 className="text-lg font-nothing text-text-primary mb-3">2. Upload Your First File</h3>
               <p className="text-text-secondary mb-3">Use our simple API to upload files securely.</p>
               <div className="bg-background/50 border border-border rounded-lg p-4 font-mono text-sm">
-                curl -X POST -F "file=@example.pdf" \<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;-H "Authorization: Bearer YOUR_API_KEY" \<br/>
+                curl -X POST -F &quot;file=@example.pdf&quot; \<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;-H &quot;Authorization: Bearer YOUR_API_KEY&quot; \<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;https://api.nulltools.xyz/v1/files
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function Documentation() {
               <p className="text-text-secondary mb-3">Generate disposable email addresses for testing.</p>
               <div className="bg-background/50 border border-border rounded-lg p-4 font-mono text-sm">
                 curl -X POST \<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;-H "Authorization: Bearer YOUR_API_KEY" \<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;-H &quot;Authorization: Bearer YOUR_API_KEY&quot; \<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;https://api.nulltools.xyz/v1/emails
               </div>
             </div>

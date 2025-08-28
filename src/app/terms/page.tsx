@@ -68,7 +68,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">5. LIMITATION OF LIABILITY</h2>
               <p>
-                As our services are currently in development and early access phases, they are provided "as is" without warranties. Null Tools shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services. Please use our beta services with appropriate caution.
+                As our services are currently in development and early access phases, they are provided &quot;as is&quot; without warranties. Null Tools shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services. Please use our beta services with appropriate caution.
               </p>
             </section>
 
@@ -82,7 +82,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">7. UPDATES TO TERMS</h2>
               <p>
-                As we continue developing our services, these terms may be updated to reflect new features and changes. We'll notify users of significant updates through our website or email.
+                As we continue developing our services, these terms may be updated to reflect new features and changes. We&apos;ll notify users of significant updates through our website or email.
               </p>
             </section>
 
