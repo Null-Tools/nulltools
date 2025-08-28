@@ -3,14 +3,14 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Github, Mail, ExternalLink, ArrowRight } from 'lucide-react'
+import { Github, Mail, ExternalLink, ArrowRight, Lock } from 'lucide-react'
 
 export function Footer() {
   const footerSections = [
     {
       title: 'Products',
       links: [
-        { name: 'Null Drop', href: 'https://nulldrop.xyz', status: 'Beta', enabled: true },
+        { name: 'Null Drop', href: 'https://nulldrop.xyz', status: 'Soon', enabled: false },
         { name: 'Null Mails', href: 'https://nullmails.xyz', status: 'Soon', enabled: false },
         { name: 'Null Vault', href: 'https://nullvault.xyz', status: 'Soon', enabled: false }
       ]
@@ -125,10 +125,11 @@ export function Footer() {
                         )}
                       </Link>
                     ) : (
-                      <div className="text-text-secondary/40 text-sm flex items-center gap-2 cursor-not-allowed">
+                      <div className="text-text-secondary/20 text-sm flex items-center gap-2 cursor-not-allowed opacity-50">
+                        <Lock size={12} className="text-text-secondary/30" />
                         {link.name}
                         {link.status && (
-                          <span className="text-xs bg-card/30 border border-border/30 px-3 py-1 rounded-full text-text-secondary/40 ml-2">
+                          <span className="text-xs bg-card/20 border border-border/20 px-3 py-1 rounded-full text-text-secondary/20 ml-2">
                             {link.status}
                           </span>
                         )}
@@ -182,13 +183,13 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-sm text-text-secondary">
-            <p>&copy; {new Date().getFullYear()} Null Tools. All rights reserved.</p>
+            <p>&copy; 2025 Null Tools. All rights reserved.</p>
             <div className="hidden md:block">
               <iframe 
                 src="https://status.nulltools.xyz/badge?theme=dark" 
-                width="250" 
-                height="30" 
-                frameBorder="0" 
+                width={250} 
+                height={30} 
+                frameBorder={0} 
                 scrolling="no" 
                 style={{ colorScheme: 'normal' }}
                 className="rounded border-0"

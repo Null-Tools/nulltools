@@ -17,14 +17,13 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-flex items-center gap-2 bg-card/50 border border-border px-4 py-2 rounded-full text-sm text-text-secondary mb-6">
-            <Star size={16} className="text-yellow-400 fill-yellow-400" />
             Coming Soon
           </div>
           <h2 className="text-4xl md:text-6xl font-nothing text-text-primary mb-6">
-            WHAT DEVELOPERS SAY
+            WHAT DEVELOPERS SAY...
           </h2>
           <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto">
-            We&apos;re still collecting feedback from our amazing developer community.
+            We're still collecting feedback from our amazing developer community!
           </p>
         </motion.div>
 

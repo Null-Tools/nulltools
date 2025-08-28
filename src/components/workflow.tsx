@@ -1,30 +1,30 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Upload, Mail, Shield, ArrowRight, Zap } from 'lucide-react'
+import { ArrowRight, Zap } from 'lucide-react'
 
 const workflowSteps = [
   {
-    icon: Upload,
+    icon: "^",
     title: "UPLOAD & SHARE",
-    description: "Drag and drop files instantly. Get secure links in seconds.",
-    features: ["Instant upload", "Secure links", "API access"],
+    description: "Drag, Drop, Done. Share files with ease.",
+    features: ["No configuration headaches", "AES-256 Encryption", "Developer-friendly API"],
     color: "from-blue-500 to-cyan-500",
     number: "01"
   },
   {
-    icon: Mail,
+    icon: "@",
     title: "TEMPORARY IDENTITY",
-    description: "Generate disposable emails and phone numbers for testing.",
-    features: ["Temp emails", "Phone numbers", "Privacy first"],
+    description: "Disposable emails & numbers. Without risk.",
+    features: ["Rapid generation", "Real inbox access"],
     color: "from-purple-500 to-pink-500",
     number: "02"
   },
   {
-    icon: Shield,
+    icon: "$",
     title: "SECURE PAYMENTS",
-    description: "Process payments with enterprise-grade security.",
-    features: ["PCI compliant", "Fraud protection", "Real-time"],
+    description: "Sell anywhere with peace of mind. Secure, fast, and reliable.",
+    features: ["Multi-currency support", "Smart fraud detection", "Real-time processing"],
     color: "from-green-500 to-emerald-500",
     number: "03"
   }
@@ -83,34 +83,35 @@ export function Workflow() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {workflowSteps.map((step, index) => {
-            const Icon = step.icon;
             return (
               <div key={index} className="relative group">
                 <motion.div
                   variants={itemVariants}
                   whileHover={{ 
-                    scale: 1.02, 
-                    y: -4,
-                    transition: { duration: 0.2, ease: "easeOut" }
+                    scale: 1.01, 
+                    y: -2,
+                    transition: { duration: 0.15, ease: "easeOut" }
                   }}
-                  className="relative bg-card/60 backdrop-blur-md border border-border/50 rounded-3xl p-6 md:p-8 h-full transition-shadow duration-200 hover:shadow-xl"
+                  className="relative bg-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full transition-all duration-150 hover:border-white/20 group overflow-hidden"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} rounded-3xl opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+                  <div className={`absolute top-0 left-0 w-32 h-32 bg-gradient-to-br ${step.color} rounded-2xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-200`} />
+                  <div className={`absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl ${step.color} rounded-2xl opacity-15 blur-xl group-hover:opacity-25 transition-opacity duration-200`} />
                   
-                  <div className="absolute -top-3 -right-3 w-12 h-12 bg-background border border-border/50 rounded-2xl flex items-center justify-center font-nothing text-lg font-bold text-text-primary shadow-lg">
-                    {step.number}
-                  </div>
-
                   <div className="relative z-10">
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${step.color} mb-6 shadow-lg`}>
-                      <Icon size={28} className="text-white" />
+                    <div className="flex items-start justify-between mb-8">
+                      <div className="text-4xl font-nothing text-white">
+                        {step.icon}
+                      </div>
+                      <div className="text-white/30 font-nothing text-sm tracking-widest">
+                        {step.number}
+                      </div>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl font-nothing text-text-primary mb-4 tracking-wide">
+                    <h3 className="text-2xl font-nothing text-white mb-4 tracking-wider">
                       {step.title}
                     </h3>
                     
-                    <p className="text-text-secondary mb-6 leading-relaxed text-sm md:text-base">
+                    <p className="text-white/70 mb-6 leading-relaxed">
                       {step.description}
                     </p>
 
@@ -118,14 +119,14 @@ export function Workflow() {
                       {step.features.map((feature, featureIndex) => (
                         <motion.div 
                           key={featureIndex}
-                          className="flex items-center gap-3 text-sm text-text-secondary"
+                          className="flex items-start gap-3 text-sm text-white/60"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.1 * featureIndex + 0.3, duration: 0.3 }}
                         >
-                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full flex-shrink-0" />
-                          <span className="font-medium">{feature}</span>
+                          <div className="text-white/40 font-nothing text-xs mt-0.5">•</div>
+                          <span>{feature}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -140,9 +141,25 @@ export function Workflow() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + index * 0.1, duration: 0.3 }}
                   >
-                    <div className="bg-background/90 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-md">
-                      <ArrowRight size={16} className="text-text-secondary" />
-                    </div>
+                    <motion.div 
+                      className="bg-background/90 backdrop-blur-sm border border-border/50 rounded-full p-2 shadow-md relative overflow-hidden"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <motion.div 
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                        initial={{ x: "-100%" }}
+                        animate={{ x: "100%" }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          repeatType: "loop",
+                          ease: "easeInOut",
+                          repeatDelay: 1
+                        }}
+                      />
+                      <ArrowRight size={16} className="text-text-secondary relative z-10" />
+                    </motion.div>
                   </motion.div>
                 )}
               </div>

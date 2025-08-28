@@ -5,8 +5,20 @@ import { motion } from 'framer-motion'
 import { TypingText } from '@/components/ui/typing-text'
 import { FloatingDots } from '@/components/ui/floating-dots'
 import { ArrowDown, Github, Mail } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export function Hero() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   const GridBackground = () => (
     <div className="absolute inset-0 z-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
   );
@@ -17,6 +29,19 @@ export function Hero() {
     <section className="h-screen flex items-center justify-center text-center px-4 relative overflow-hidden">
       <GridBackground />
       <FloatingDots count={30} />
+      
+      <div 
+        className="absolute pointer-events-none z-5"
+        style={{
+          left: mousePos.x - 150,
+          top: mousePos.y - 150,
+          width: 300,
+          height: 300,
+          background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
+          borderRadius: '50%',
+          transition: 'opacity 0.3s ease-out',
+        }}
+      />
       
       <div className="relative z-10 max-w-5xl mx-auto">
         <motion.div

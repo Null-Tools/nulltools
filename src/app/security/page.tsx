@@ -23,7 +23,7 @@ export default function Security() {
           <div className="bg-card/50 border border-border p-6 rounded-lg mt-6">
             <h3 className="text-lg font-nothing text-text-primary mb-2">Development Status</h3>
             <p className="text-sm text-text-secondary">
-              Null Tools is currently in early development. We&apos;re implementing security best practices from day one, 
+              Null Tools is currently in early development. We're implementing security best practices from day one, 
               but some advanced security features are still being developed as our services mature.
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function Security() {
                 <h2 className="text-2xl font-nothing text-text-primary tracking-wide">DATA ENCRYPTION</h2>
               </div>
               <p className="mb-4">
-                Security measures we&apos;re implementing and planning:
+                Security measures we're implementing and planning:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>TLS 1.3 for website connections - <span className="text-green-400">Active</span></li>
@@ -82,7 +82,7 @@ export default function Security() {
             <section>
               <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">COMPLIANCE & CERTIFICATIONS</h2>
               <p className="mb-4">
-                Compliance standards we&apos;re working towards:
+                Compliance standards we're working towards:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Basic GDPR compliance practices - <span className="text-green-400">Implemented</span></li>
@@ -95,7 +95,7 @@ export default function Security() {
             <section>
               <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">INFRASTRUCTURE SECURITY</h2>
               <p className="mb-4">
-                Infrastructure security measures we&apos;re building:
+                Infrastructure security measures we're building:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Modern cloud hosting with security defaults - <span className="text-green-400">Active</span></li>
@@ -117,7 +117,7 @@ export default function Security() {
                 <p className="mb-2">
                   <strong>Email:</strong>{' '}
                   <a href="mailto:security@nulltools.xyz" className="text-text-primary hover:underline">
-                    security@nulltools.xyz
+                    contact@nulltools.xyz
                   </a>
                 </p>
                 <p className="mb-2">

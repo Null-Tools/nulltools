@@ -17,7 +17,7 @@ export default function About() {
       icon: "✓",
       title: "Developer Focused",
       description: "Built by developers, for developers. Simple, powerful, and reliable.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-gray-500 to-gray-600"
     },
     {
       icon: "●",
@@ -35,14 +35,14 @@ export default function About() {
 
   const timeline = [
     {
-      year: "2024",
+      year: "2024 Q1",
       title: "The Beginning",
       description: "Started as a side project to solve temporary mails problem."
     },
     {
-      year: "2024",
-      title: "The Beginning",
-      description: "Started as a side project to solve temporary mails problem."
+      year: "2024 Q2",
+      title: "Null Ideas",
+      description: "From mails to files, and payments. We're building the future of developer infrastructure."
     },
     {
       year: "2025",
@@ -60,7 +60,12 @@ export default function About() {
     {
       name: "!̸I̸m̸p̸u̸l̸s̸e̸",
       role: "Founder & CEO",
-      description: "Passionate developer building tools that solve real problems. Creating the future of developer infrastructure."
+      description: "I would say, It's not worth it. (I still tried tho)"
+    },
+    {
+      name: "You!?!?",
+      role: "Contributor",
+      description: ""
     }
   ]
 
@@ -108,7 +113,7 @@ export default function About() {
         >
           <h2 className="text-3xl font-nothing text-text-primary mb-6 tracking-wide">OUR MISSION</h2>
           <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
-            To provide developers with the essential tools they need to build, test, and deploy applications 
+            Provide developers with the essential tools they need to build, test, and deploy applications 
             securely and efficiently. We believe in simplicity, security, and putting developers first.
           </p>
         </motion.div>
@@ -167,7 +172,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
                   <motion.div 
-                    className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 border-4 border-background rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg relative z-10"
+                    className="w-16 h-16 bg-gradient-to-br from-gray-500 to-gray-600 border-4 border-background rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg relative z-10"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -191,30 +196,32 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">MEET THE FOUNDER</h2>
-          <div className="flex justify-center">
-            {team.map((member) => (
+          <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">MEET THE TEAM</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, index) => (
               <motion.div 
                 key={member.name} 
-                className="bg-card/30 border border-border rounded-2xl p-8 text-center max-w-md hover:border-text-secondary/50 transition-all group"
+                className="bg-card/30 border border-border rounded-2xl p-6 text-center hover:border-text-secondary/50 transition-all group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <motion.div 
-                  className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"
+                  className="w-16 h-16 bg-gradient-to-br from-gray-500 to-gray-600 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"
                   whileHover={{ rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <span className="text-3xl font-nothing text-white">
+                  <span className="text-xl font-nothing text-white">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </span>
                 </motion.div>
-                <h3 className="text-xl font-nothing text-text-primary mb-2 tracking-wide">{member.name}</h3>
-                <p className="text-sm text-text-secondary mb-4 font-medium uppercase tracking-wider">{member.role}</p>
-                <p className="text-text-secondary leading-relaxed">{member.description}</p>
+                <h3 className="text-lg font-nothing text-text-primary mb-2 tracking-wide">{member.name}</h3>
+                <p className={`text-xs text-text-secondary font-medium uppercase tracking-wider ${member.description ? 'mb-3' : 'mb-0'}`}>{member.role}</p>
+                {member.description && (
+                  <p className="text-text-secondary text-xs leading-relaxed">{member.description}</p>
+                )}
               </motion.div>
             ))}
           </div>
@@ -281,7 +288,7 @@ export default function About() {
         >
           <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">WANT TO LEARN MORE?</h2>
           <p className="text-text-secondary mb-8">
-            We&apos;d love to hear from you. Get in touch with any questions or feedback.
+            We'd love to hear from you. Get in touch with any questions or feedback.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

@@ -144,7 +144,7 @@ export default function Documentation() {
         <div className="mt-12 text-center">
           <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">NEED HELP?</h2>
           <p className="text-text-secondary mb-6">
-            Can&apos;t find what you&apos;re looking for? Our team is here to help.
+            Can't find what you're looking for? Our team is here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -122,7 +122,7 @@ export default function Careers() {
         <div className="mb-16 bg-card/30 border border-border rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-nothing text-text-primary mb-6 tracking-wide">WHY JOIN NULL TOOLS?</h2>
           <p className="text-text-secondary text-lg leading-relaxed max-w-4xl mx-auto mb-8">
-            We&apos;re a small but growing team of passionate developers building tools that we use ourselves. 
+            We're a small but growing team of passionate developers building tools that we use ourselves. 
             Every team member has significant impact on our product and the developer community we serve.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -264,9 +264,9 @@ export default function Careers() {
         </div>
 
         <div className="text-center bg-card/30 border border-border rounded-2xl p-8">
-          <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">DON&apos;T SEE THE RIGHT ROLE?</h2>
+          <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">DON'T SEE THE RIGHT ROLE?</h2>
           <p className="text-text-secondary mb-8">
-            We&apos;re always looking for talented people. Send us your resume and tell us how you&apos;d like to contribute.
+            We're always looking for talented people. Send us your resume and tell us how you'd like to contribute.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

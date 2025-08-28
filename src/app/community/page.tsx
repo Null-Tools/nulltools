@@ -201,7 +201,7 @@ export default function Community() {
             <div>
               <h3 className="text-lg font-nothing text-text-primary mb-4">Be Respectful</h3>
               <p className="text-text-secondary text-sm mb-4">
-                Treat all community members with respect and kindness. We&apos;re all here to learn and grow together.
+                Treat all community members with respect and kindness. We're all here to learn and grow together.
               </p>
               <h3 className="text-lg font-nothing text-text-primary mb-4">Stay On Topic</h3>
               <p className="text-text-secondary text-sm">
@@ -215,7 +215,7 @@ export default function Community() {
               </p>
               <h3 className="text-lg font-nothing text-text-primary mb-4">No Spam</h3>
               <p className="text-text-secondary text-sm">
-                Avoid promotional content, spam, or irrelevant posts that don&apos;t add value to the community.
+                Avoid promotional content, spam, or irrelevant posts that don't add value to the community.
               </p>
             </div>
           </div>

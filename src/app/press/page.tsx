@@ -5,22 +5,10 @@ import { Footer } from '@/components/footer'
 export default function PressKit() {
   const pressReleases = [
     {
-      title: "Null Tools Raises $2M Seed Round to Democratize Developer Infrastructure",
-      date: "March 1, 2024",
-      summary: "Series A funding led by Accel Partners to expand developer tool ecosystem and team growth.",
-      href: "/press/seed-funding-announcement"
-    },
-    {
-      title: "Null Tools Launches Null Drop: Secure File Sharing for Developers",
-      date: "January 15, 2024",
-      summary: "New file sharing service designed specifically for developer workflows and team collaboration.",
-      href: "/press/null-drop-launch"
-    },
-    {
-      title: "5,000 Developers Join Null Tools Platform in First Quarter",
-      date: "December 10, 2023",
-      summary: "Growing developer adoption signals strong market demand for simplified infrastructure tools.",
-      href: "/press/5k-developers-milestone"
+      title: "-",
+      date: "-",
+      summary: "-",
+      href: "-"
     }
   ]
 
@@ -29,54 +17,47 @@ export default function PressKit() {
       name: "Logo Package",
       description: "High-resolution logos in various formats (SVG, PNG, JPG)",
       files: ["Logo - Light.svg", "Logo - Dark.svg", "Logo - Full Color.png"],
-      size: "2.1 MB"
+      size: "0 MB"
     },
     {
       name: "Brand Guidelines",
       description: "Complete brand guidelines including colors, typography, and usage rules",
       files: ["Brand Guidelines.pdf"],
-      size: "4.5 MB"
+      size: "0 MB"
     },
     {
       name: "Product Screenshots",
       description: "High-quality screenshots of our products and dashboard",
       files: ["Dashboard.png", "API Docs.png", "File Upload.png"],
-      size: "12.3 MB"
+      size: "0 MB"
     },
     {
       name: "Team Photos",
       description: "Professional headshots and team photos for media use",
       files: ["Team Photo.jpg", "Founder Headshots.zip"],
-      size: "8.7 MB"
+      size: "0 MB"
     }
   ]
 
   const mediaContacts = [
     {
-      name: "Alex Chen",
-      role: "Founder & CEO",
-      email: "alex@nulltools.xyz",
-      phone: "+1 (555) 123-0001",
-      bio: "Former senior engineer at Google and Stripe. Expert in developer tools and API design."
-    },
-    {
-      name: "Sarah Kim",
-      role: "CTO",
-      email: "sarah@nulltools.xyz",
-      phone: "+1 (555) 123-0002",
-      bio: "Security expert with 10+ years in fintech. Previously at Square and Coinbase."
+      name: "-",
+      role: "-",
+      email: "-",
+      phone: "-",
+      bio: "-"
     }
   ]
 
   const companyFacts = [
-    { label: "Founded", value: "2023" },
-    { label: "Headquarters", value: "San Francisco, CA" },
-    { label: "Team Size", value: "12 employees" },
-    { label: "Funding", value: "$2M seed round" },
-    { label: "Developers", value: "5,000+ active users" },
-    { label: "API Calls", value: "1M+ monthly" },
-    { label: "Countries", value: "50+ served" },
-    { label: "Uptime", value: "99.9% SLA" }
+    { label: "Founded", value: "2025" },
+    { label: "Headquarters", value: "Poland, Warsaw" },
+    { label: "Team Size", value: "1 `employee`" },
+    { label: "Funding", value: "$0" },
+    { label: "Developers", value: "0 active users" },
+    { label: "API Calls", value: "0 monthly" },
+    { label: "Countries", value: "0 served" },
+    { label: "Uptime", value: "0% SLA" }
   ]
 
   return (
@@ -102,8 +83,8 @@ export default function PressKit() {
           <h2 className="text-2xl font-nothing text-text-primary mb-6 tracking-wide">COMPANY OVERVIEW</h2>
           <p className="text-text-secondary leading-relaxed mb-6 text-lg">
             Null Tools provides essential developer infrastructure including secure file sharing, 
-            temporary email services, and payment processing. Founded in 2023, we serve over 5,000 
-            developers across 50+ countries with simple, secure, and reliable APIs.
+            temporary email services, and payment processing. Founded in 2025, we serve over 0 
+            developers across 0 countries with simple, secure, and reliable APIs.
           </p>
           <p className="text-text-secondary leading-relaxed">
             Our mission is to provide developers with the tools they need to build, test, and deploy 

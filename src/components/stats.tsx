@@ -99,7 +99,7 @@ export function Stats() {
             BUILDING FOR DEVELOPERS
           </h2>
           <p className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto">
-            We&apos;re just getting started on our mission to create better developer tools
+            We're just getting started on our mission to create better developer tools
           </p>
         </motion.div>
 
@@ -112,30 +112,61 @@ export function Stats() {
                 className="relative group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-8 text-center relative overflow-hidden group-hover:border-text-secondary/50 transition-colors">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative bg-black/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center transition-all duration-300 hover:border-white/30 hover:shadow-2xl group overflow-hidden">
+                  <div className={`absolute -inset-2 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 rounded-3xl`} />
+                  <div className={`absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-3/4 h-8 bg-gradient-to-t ${stat.color} opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-500 rounded-full`} />
+                  <motion.div 
+                    className={`absolute w-24 h-24 bg-gradient-to-br ${stat.color} rounded-full opacity-25 blur-xl group-hover:opacity-40`}
+                    animate={{
+                      x: index % 2 === 0 ? [0, 20, -10, 15, 0] : [0, -18, 12, -8, 0],
+                      y: index % 3 === 0 ? [0, -15, 10, -5, 0] : index % 3 === 1 ? [0, 12, -8, 18, 0] : [0, -10, 15, -12, 0],
+                    }}
+                    transition={{
+                      duration: 6 + (index % 3),
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.7
+                    }}
+                    style={{ left: '10%', top: '15%' }}
+                  />
+                  <motion.div 
+                    className={`absolute w-20 h-20 bg-gradient-to-tl ${stat.color} rounded-full opacity-20 blur-lg group-hover:opacity-35`}
+                    animate={{
+                      x: index % 2 === 0 ? [0, -25, 15, -10, 0] : [0, 22, -16, 12, 0],
+                      y: index % 3 === 0 ? [0, 20, -12, 8, 0] : index % 3 === 1 ? [0, -18, 14, -9, 0] : [0, 16, -20, 11, 0],
+                    }}
+                    transition={{
+                      duration: 8 + (index % 4),
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.9 + 1.5
+                    }}
+                    style={{ right: '15%', bottom: '20%' }}
+                  />
                   
                   <div className="relative z-10">
-                                      <motion.div
-                    className={`inline-flex p-4 rounded-full bg-gradient-to-r ${stat.color}/20 mb-6`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Icon size={24} className="text-text-primary" />
-                  </motion.div>
+                    <div className="flex justify-center mb-6">
+                      <div className="p-3 bg-card/30 border border-border/50 rounded-xl">
+                        <Icon size={28} className="text-white" />
+                      </div>
+                    </div>
 
                     <div className="mb-4">
-                      <div className="text-4xl md:text-5xl font-nothing text-text-primary mb-2">
+                      <div className="text-4xl md:text-5xl font-nothing text-white mb-2">
                         <AnimatedCounter value={stat.value} />
                         <span>{stat.suffix}</span>
                       </div>
-                      <div className="text-xl font-nothing text-text-primary mb-2">
+                      <div className="text-xl font-nothing text-white mb-2 tracking-wider">
                         {stat.label}
                       </div>
-                      <p className="text-text-secondary text-sm">
+                      <p className="text-white/60 text-sm">
                         {stat.description}
                       </p>
                     </div>

@@ -85,7 +85,7 @@ export default function CookiePolicy() {
             <section>
               <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">5. COOKIE RETENTION</h2>
               <p>
-                Currently, we use minimal cookies with short retention periods. Most cookies last only for your session and are automatically deleted when you close your browser. As we add more features, we&apos;ll keep retention periods as short as possible while maintaining functionality.
+                Currently, we use minimal cookies with short retention periods. Most cookies last only for your session and are automatically deleted when you close your browser. As we add more features, we'll keep retention periods as short as possible while maintaining functionality.
               </p>
             </section>
 
