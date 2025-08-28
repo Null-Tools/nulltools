@@ -122,7 +122,7 @@ export default function Careers() {
         <div className="mb-16 bg-card/30 border border-border rounded-2xl p-8 text-center">
           <h2 className="text-2xl font-nothing text-text-primary mb-6 tracking-wide">WHY JOIN NULL TOOLS?</h2>
           <p className="text-text-secondary text-lg leading-relaxed max-w-4xl mx-auto mb-8">
-            We're a small but growing team of passionate developers building tools that we use ourselves. 
+            We&apos;re a small but growing team of passionate developers building tools that we use ourselves. 
             Every team member has significant impact on our product and the developer community we serve.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -144,7 +144,7 @@ export default function Careers() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">BENEFITS & PERKS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => {
+            {benefits.map((benefit) => {
               const Icon = benefit.icon
               return (
                 <div key={benefit.title} className="bg-card/30 border border-border rounded-2xl p-6 text-center">
@@ -162,7 +162,7 @@ export default function Careers() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">OPEN POSITIONS</h2>
           <div className="space-y-6">
-            {openPositions.map((position, index) => (
+            {openPositions.map((position) => (
               <div key={position.title} className="bg-card/30 border border-border rounded-2xl p-8">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-1">
@@ -228,7 +228,7 @@ export default function Careers() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">OUR VALUES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div key={value.title} className="bg-card/30 border border-border rounded-2xl p-6">
                 <h3 className="text-lg font-nothing text-text-primary mb-3">{value.title}</h3>
                 <p className="text-text-secondary leading-relaxed">{value.description}</p>
@@ -266,7 +266,7 @@ export default function Careers() {
         <div className="text-center bg-card/30 border border-border rounded-2xl p-8">
           <h2 className="text-2xl font-nothing text-text-primary mb-4 tracking-wide">DON'T SEE THE RIGHT ROLE?</h2>
           <p className="text-text-secondary mb-8">
-            We're always looking for talented people. Send us your resume and tell us how you'd like to contribute.
+            We&apos;re always looking for talented people. Send us your resume and tell us how you&apos;d like to contribute.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -154,7 +154,7 @@ export default function Blog() {
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">RECENT POSTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+            {blogPosts.map((post) => (
               <div key={post.title} className="bg-card/30 border border-border rounded-2xl p-6 hover:border-text-secondary/50 transition-all group">
                 <Link href={post.href} className="block">
                   <div className="flex flex-wrap gap-2 mb-4">

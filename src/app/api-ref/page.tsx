@@ -105,7 +105,7 @@ export default function APIReference() {
             All API requests require authentication using a Bearer token in the Authorization header.
           </p>
           <div className="bg-background/50 border border-border rounded-lg p-4 font-mono text-sm mb-4">
-            curl -H "Authorization: Bearer YOUR_API_KEY" \<br/>
+            curl -H &quot;Authorization: Bearer YOUR_API_KEY&quot; \<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;https://api.nulltools.xyz/v1/status
           </div>
           <p className="text-text-secondary text-sm">
