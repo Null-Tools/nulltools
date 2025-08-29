@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   description: "A suite of powerful, minimalist tools for developers and creators. Upload files, manage temporary communications, and process payments securely.",
   icons: {
     icon: [
-      { url: "/nulltools.ico", sizes: "16x16", type: "image/x-icon" },
-      { url: "/nulltools.ico", sizes: "32x32", type: "image/x-icon" },
-      { url: "/nulltools.ico", sizes: "192x192", type: "image/x-icon" },
+      { url: "/nulltoolsdots.ico", sizes: "16x16", type: "image/x-icon" },
+      { url: "/nulltoolsdots.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/nulltoolsdots.ico", sizes: "192x192", type: "image/x-icon" },
     ],
     apple: [
-      { url: "/nulltools.ico", sizes: "180x180", type: "image/x-icon" },
+      { url: "/nulltoolsdots.ico", sizes: "180x180", type: "image/x-icon" },
     ],
-    shortcut: "/nulltools.ico",
+    shortcut: "/nulltoolsdots.ico",
   },
 };
 
