@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Github, Mail, ExternalLink, ArrowRight, Lock } from 'lucide-react'
+import { Github, Mail, ExternalLink, ArrowRight, Lock, X } from 'lucide-react'
 
 export function Footer() {
   const footerSections = [
@@ -47,6 +47,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Null-Tools', label: 'GitHub' },
     { icon: Mail, href: 'mailto:contact@nulltools.xyz', label: 'Email' },
+    { icon: X, href: 'https://x.com/NullToolsXYZ', label: 'X' },
   ]
 
   return (

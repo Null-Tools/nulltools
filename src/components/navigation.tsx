@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu, ExternalLink, Github, Mail } from 'lucide-react'
+import { Menu, ExternalLink, Github, Mail, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const navLinks = [
@@ -68,6 +68,16 @@ export function Navigation() {
               aria-label="GitHub"
             >
               <Github size={20} />
+            </Link>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href="https://x.com/NullToolsXYZ"
+              className="bg-card/50 hover:bg-card border border-border hover:border-text-secondary/50 text-text-secondary hover:text-text-primary transition-all duration-200 p-3 rounded-xl shadow-sm flex items-center justify-center"
+              aria-label="X"
+            >
+              <X size={20} />
             </Link>
           </motion.div>
 
