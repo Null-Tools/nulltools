@@ -63,8 +63,23 @@ export default function About() {
       description: "I would say, It's not worth it. (I still tried tho)"
     },
     {
+      name: "250cps_",
+      role: "Founder",
+      description: "I am CPS, 26 years old and my name is franek"
+    },
+    {
+      name: "zxvdev",
+      role: "Founder",
+      description: "I don't know how I got here"
+    },
+    {
+      name: "havananana",
+      role: "Founder",
+      description: "Description is a funny name for this field"
+    },
+    {
       name: "You!?!?",
-      role: "Contributor",
+      role: "",
       description: ""
     }
   ]
