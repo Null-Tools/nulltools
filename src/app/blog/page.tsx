@@ -1,81 +1,32 @@
+'use client'
+
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Clock, ArrowRight } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, ArrowRight, User, FileText, Smartphone, Laptop, Rocket } from 'lucide-react'
 import { Footer } from '@/components/footer'
+import { getFeaturedPost, getRecentPosts, getAllTags, getTagCounts } from '@/lib/blog'
+import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Blog() {
-  const featuredPost = {
-    title: "Building Secure APIs: Lessons from Null Tools",
-    excerpt: "What we learned building secure, scalable APIs that handle millions of requests. Best practices, pitfalls, and real-world insights.",
-    author: "Alex Chen",
-    date: "March 10, 2024",
-    readTime: "8 min read",
-    tags: ["Security", "APIs", "Architecture"],
-    href: "/blog/building-secure-apis"
-  }
+  const [activeCategory, setActiveCategory] = useState("All Posts")
+  
+  const featuredPost = getFeaturedPost()
+  const allRecentPosts = getRecentPosts(20)
+  const tagCounts = getTagCounts()
+  const totalPosts = allRecentPosts.length + (featuredPost ? 1 : 0)
 
-  const blogPosts = [
-    {
-      title: "The Future of Developer Tools",
-      excerpt: "How AI and automation are changing the developer experience, and what it means for tool builders.",
-      author: "Sarah Kim",
-      date: "March 5, 2024",
-      readTime: "6 min read",
-      tags: ["Development", "AI", "Tools"],
-      href: "/blog/future-developer-tools"
-    },
-    {
-      title: "Why We Built Null Drop",
-      excerpt: "The story behind our file sharing service and the problems it solves for developers.",
-      author: "Marcus Rodriguez",
-      date: "February 28, 2024",
-      readTime: "5 min read",
-      tags: ["Product", "Story", "Files"],
-      href: "/blog/why-null-drop"
-    },
-    {
-      title: "Scaling to 1 Million API Calls",
-      excerpt: "Technical deep-dive into how we handle scale, from infrastructure to monitoring.",
-      author: "Emily Zhang",
-      date: "February 20, 2024",
-      readTime: "10 min read",
-      tags: ["Engineering", "Scale", "Infrastructure"],
-      href: "/blog/scaling-to-1m-calls"
-    },
-    {
-      title: "Developer Security Best Practices",
-      excerpt: "Essential security practices every developer should follow when building applications.",
-      author: "Sarah Kim",
-      date: "February 15, 2024",
-      readTime: "7 min read",
-      tags: ["Security", "Best Practices", "Development"],
-      href: "/blog/security-best-practices"
-    },
-    {
-      title: "Building a Developer Community",
-      excerpt: "How we grew from 0 to 5,000 developers and the lessons we learned along the way.",
-      author: "Alex Chen",
-      date: "February 10, 2024",
-      readTime: "5 min read",
-      tags: ["Community", "Growth", "Developers"],
-      href: "/blog/building-developer-community"
-    },
-    {
-      title: "API Design Philosophy",
-      excerpt: "Our approach to designing APIs that developers love to use and integrate with.",
-      author: "Marcus Rodriguez",
-      date: "February 5, 2024",
-      readTime: "8 min read",
-      tags: ["API Design", "UX", "Development"],
-      href: "/blog/api-design-philosophy"
-    }
-  ]
+  const recentPosts = activeCategory === "All Posts" 
+    ? allRecentPosts.slice(0, 6)
+    : allRecentPosts.filter(post => post.tags.includes(activeCategory)).slice(0, 6)
 
   const categories = [
-    { name: "All Posts", count: 12, active: true },
-    { name: "Engineering", count: 5, active: false },
-    { name: "Security", count: 3, active: false },
-    { name: "Product", count: 2, active: false },
-    { name: "Community", count: 2, active: false }
+    { name: "All Posts", count: totalPosts, active: activeCategory === "All Posts" },
+    { name: "Engineering", count: tagCounts['Engineering'] || 0, active: activeCategory === "Engineering" },
+    { name: "Security", count: tagCounts['Security'] || 0, active: activeCategory === "Security" },
+    { name: "Product", count: tagCounts['Product'] || 0, active: activeCategory === "Product" },
+    { name: "Community", count: tagCounts['Community'] || 0, active: activeCategory === "Community" },
+    { name: "Development", count: tagCounts['Development'] || 0, active: activeCategory === "Development" },
+    { name: "Announcement", count: tagCounts['Announcement'] || 0, active: activeCategory === "Announcement" }
   ]
 
   return (
@@ -93,104 +44,202 @@ export default function Blog() {
             BLOG
           </h1>
           <p className="text-text-secondary text-lg">
-            Insights, tutorials, and stories from the Null Tools team
+            Insights, tutorials, and stories from the Null Team
           </p>
         </div>
 
         <div className="mb-12">
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
-              <Link
+              <button
                 key={category.name}
-                href="#"
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                onClick={() => setActiveCategory(category.name)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                   category.active
-                    ? 'bg-white text-black'
-                    : 'bg-card border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary/50'
+                    ? 'bg-white text-black scale-105 font-bold'
+                    : 'bg-card border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary/50 hover:scale-105'
                 }`}
               >
                 {category.name} ({category.count})
-              </Link>
+              </button>
             ))}
           </div>
         </div>
 
-        <div className="mb-16">
-          <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">FEATURED POST</h2>
-          <div className="bg-card/30 border border-border rounded-2xl p-8 hover:border-text-secondary/50 transition-all group">
-            <Link href={featuredPost.href} className="block">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {featuredPost.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-card border border-border rounded-full text-xs text-text-secondary">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h3 className="text-2xl md:text-3xl font-nothing text-text-primary mb-4 group-hover:text-text-secondary transition-colors">
-                {featuredPost.title}
-              </h3>
-              <p className="text-text-secondary leading-relaxed mb-6">
-                {featuredPost.excerpt}
-              </p>
-              <div className="flex items-center gap-6 text-sm text-text-secondary">
-                <span>By {featuredPost.author}</span>
-                <div className="flex items-center gap-1">
-                  <Calendar size={14} />
-                  <span>{featuredPost.date}</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Clock size={14} />
-                  <span>{featuredPost.readTime}</span>
-                </div>
-              </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-text-primary group-hover:gap-3 transition-all">
-                Read Full Article
-                <ArrowRight size={16} />
-              </div>
-            </Link>
-          </div>
-        </div>
-
-        <div className="mb-16">
-          <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide">RECENT POSTS</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <div key={post.title} className="bg-card/30 border border-border rounded-2xl p-6 hover:border-text-secondary/50 transition-all group">
-                <Link href={post.href} className="block">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-card border border-border rounded text-xs text-text-secondary">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-lg font-nothing text-text-primary mb-3 group-hover:text-text-secondary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed mb-4">
-                    {post.excerpt}
-                  </p>
-                  <div className="space-y-2 text-xs text-text-secondary">
-                    <div>By {post.author}</div>
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-1">
-                        <Calendar size={12} />
-                        <span>{post.date}</span>
+        {featuredPost && (
+          <div className="mb-20">
+            <div className="bg-gradient-to-br from-card/50 via-card/30 to-transparent border-2 border-white rounded-3xl overflow-hidden hover:border-text-secondary/50 transition-all group relative">
+              <Link href={`/blog/${featuredPost.slug}`} className="block">
+                <div className="relative">
+                  {featuredPost.image ? (
+                    <div className="relative h-80 lg:h-96 overflow-hidden">
+                      <Image
+                        src={featuredPost.image}
+                        alt={featuredPost.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute top-6 right-6">
+                        <span className="px-4 py-2 bg-white text-black text-xs font-nothing tracking-wider uppercase rounded-full">
+                          FEATURED
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="relative h-80 lg:h-96 bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]" />
+                      <div className="absolute top-6 right-6 z-10">
+                        <span className="px-4 py-2 bg-white text-black text-xs font-nothing tracking-wider uppercase rounded-full">
+                          FEATURED
+                        </span>
+                      </div>
+                      <div className="text-center z-10">
+                        <FileText size={64} className="text-white/20 mb-4 mx-auto" />
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {featuredPost.tags.map((tag) => (
+                        <button 
+                          key={tag} 
+                          onClick={(e) => {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            setActiveCategory(tag)
+                          }}
+                          className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs text-white hover:bg-white/20 transition-colors"
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-nothing text-white mb-4 group-hover:text-gray-200 transition-colors leading-tight">
+                      {featuredPost.title}
+                    </h3>
+                    <p className="text-gray-200 leading-relaxed mb-6 max-w-3xl text-lg">
+                      {featuredPost.excerpt}
+                    </p>
+                    <div className="flex items-center gap-6 text-sm text-gray-300">
+                      <div className="flex items-center gap-2">
+                        <User size={14} />
+                        <span>{featuredPost.author}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Clock size={12} />
-                        <span>{post.readTime}</span>
+                        <Calendar size={14} />
+                        <span>{featuredPost.date}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock size={14} />
+                        <span>{featuredPost.readTime}</span>
                       </div>
                     </div>
                   </div>
-                  <div className="mt-4 inline-flex items-center gap-2 text-text-primary text-sm group-hover:gap-3 transition-all">
-                    Read More
-                    <ArrowRight size={14} />
+                </div>
+              </Link>
+            </div>
+          </div>
+        )}
+
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-nothing text-text-primary mb-12 tracking-wider text-center">
+            RECENT POSTS
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {recentPosts.map((post, index) => (
+              <div key={post.id} className="bg-gradient-to-br from-card/40 via-card/20 to-transparent border-2 border-white rounded-2xl overflow-hidden hover:border-text-secondary/50 transition-all group hover:scale-105 hover:-translate-y-1 duration-300">
+                <Link href={`/blog/${post.slug}`} className="block h-full">
+                  {post.image ? (
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    </div>
+                  ) : (
+                    <div className="relative h-48 bg-gradient-to-br from-gray-800 via-gray-900 to-black flex items-center justify-center">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05),transparent)]" />
+                      {index % 3 === 0 ? (
+                        <Smartphone size={48} className="text-white/30" />
+                      ) : index % 3 === 1 ? (
+                        <Laptop size={48} className="text-white/30" />
+                      ) : (
+                        <Rocket size={48} className="text-white/30" />
+                      )}
+                    </div>
+                  )}
+                  
+                  <div className="p-6 flex flex-col h-full">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.slice(0, 2).map((tag) => (
+                        <button 
+                          key={tag} 
+                          onClick={(e) => {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            setActiveCategory(tag)
+                          }}
+                          className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs text-text-secondary uppercase tracking-wide hover:bg-white/20 hover:text-white transition-colors"
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                    
+                    <h3 className="text-xl font-nothing text-text-primary mb-3 group-hover:text-text-secondary transition-colors leading-tight">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="mt-auto">
+                      <div className="flex items-center justify-between text-xs text-text-secondary/70 mb-4">
+                        <div className="flex items-center gap-2">
+                          <User size={12} />
+                          <span>{post.author}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-1">
+                            <Calendar size={12} />
+                            <span>{post.date}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Clock size={12} />
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div className="inline-flex items-center gap-2 text-text-primary text-sm group-hover:gap-3 transition-all">
+                          Read More
+                          <ArrowRight size={14} />
+                        </div>
+                        <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                          <ArrowRight size={14} />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </Link>
               </div>
             ))}
           </div>
+          
+          {recentPosts.length === 0 && (
+            <div className="text-center py-20">
+              <FileText size={64} className="text-white/20 mb-6 mx-auto" />
+              <h3 className="text-2xl font-nothing text-text-primary mb-4">NO RECENT POSTS</h3>
+              <p className="text-text-secondary">Check back soon for more content!</p>
+            </div>
+          )}
         </div>
 
         <div className="bg-card/30 border border-border rounded-2xl p-8 text-center">

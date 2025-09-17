@@ -19,7 +19,7 @@ export function Footer() {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about', status: undefined, enabled: true },
-        { name: 'Blog', href: '/blog', status: undefined, enabled: false },
+        { name: 'Blog', href: '/blog', status: undefined, enabled: true },
         { name: 'Careers', href: '/careers', status: undefined, enabled: false },
         { name: 'Press Kit', href: '/press', status: undefined, enabled: false },
       ]
@@ -28,7 +28,6 @@ export function Footer() {
       title: 'Resources',
       links: [
         { name: 'Documentation', href: '/docs', status: undefined, enabled: false },
-        { name: 'API Reference', href: '/api-ref', status: undefined, enabled: false },
         { name: 'Community', href: '/community', status: undefined, enabled: false },
         { name: 'Support', href: '/support', status: undefined, enabled: true },
       ]
