@@ -68,9 +68,9 @@ export default function About() {
       description: "I am CPS, 26 years old and my name is franek"
     },
     {
-      name: "zxvdev",
+      name: "vivio",
       role: "Founder",
-      description: "I don't know how I got here"
+      description: "I like cats"
     },
     {
       name: "hax",
