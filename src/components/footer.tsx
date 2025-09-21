@@ -10,7 +10,7 @@ export function Footer() {
     {
       title: 'Products',
       links: [
-        { name: 'Null Drop', href: 'https://nulldrop.xyz', status: 'Soon', enabled: false },
+        { name: 'Null Drop', href: 'https://nulldrop.xyz', status: '', enabled: true },
         { name: 'Null Mails', href: 'https://nullmails.xyz', status: 'Soon', enabled: false },
         { name: 'Null Vault', href: 'https://nullvault.xyz', status: 'Soon', enabled: false }
       ]
