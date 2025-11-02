@@ -63,29 +63,19 @@ export default function About() {
       description: "I would say, It's not worth it. (I still tried tho)"
     },
     {
-      name: "250cps_",
-      role: "Founder",
-      description: "I am CPS, 26 years old and my name is franek"
-    },
-    {
       name: "vivio",
-      role: "Founder",
+      role: "CEO",
       description: "I like cats"
     },
     {
       name: "hax",
-      role: "Founder",
+      role: "CEO",
       description: "I am black."
     },
     {
-      name: "havananana",
-      role: "Founder",
-      description: "Description is a funny name for this field"
-    },
-    {
-      name: "You!?!?",
-      role: "",
-      description: ""
+      name: "vortex",
+      role: "CEO",
+      description: "Holy upload speed."
     }
   ]
 
