@@ -63,14 +63,9 @@ export default function About() {
       description: "I would say, It's not worth it. (I still tried tho)"
     },
     {
-      name: "vivio",
+      name: "ais",
       role: "CEO",
-      description: "I like cats"
-    },
-    {
-      name: "hax",
-      role: "CEO",
-      description: "I am black."
+      description: "text"
     },
     {
       name: "vortex",
