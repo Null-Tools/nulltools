@@ -4,7 +4,6 @@ import { Workflow } from '@/components/workflow'
 import { Features } from '@/components/features'
 import { Stats } from '@/components/stats'
 import { Testimonials } from '@/components/testimonials'
-import { CTA } from '@/components/cta'
 import { Footer } from '@/components/footer'
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         <Features />
         <Stats />
         <Testimonials />
-        <CTA />
       </main>
       <Footer />
     </div>
