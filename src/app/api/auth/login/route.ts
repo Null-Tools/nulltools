@@ -11,10 +11,23 @@ const loginSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    if (!process.env.JWT_SECRET) {
-      console.error('JWT_SECRET is not set')
+    const jwtSecret = process.env.JWT_SECRET
+    console.log('JWT_SECRET check:', {
+      exists: !!jwtSecret,
+      length: jwtSecret?.length || 0,
+      isFallback: jwtSecret === 'fallback-secret',
+      nodeEnv: process.env.NODE_ENV,
+    })
+    
+    if (!jwtSecret || jwtSecret === 'fallback-secret') {
+      console.error('JWT_SECRET is not configured')
+      console.error('Available env vars:', Object.keys(process.env).filter(k => k.includes('JWT') || k.includes('SECRET')))
       return NextResponse.json(
-        { error: 'Server configuration error' },
+        { 
+          error: 'Server configuration error',
+          message: 'JWT_SECRET environment variable is missing or invalid. Please set it in Vercel Environment Variables.',
+          hint: 'Go to Vercel Dashboard → Settings → Environment Variables → Add JWT_SECRET'
+        },
         { status: 500 }
       )
     }
