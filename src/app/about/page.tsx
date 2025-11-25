@@ -59,19 +59,19 @@ export default function About() {
   const team = [
     {
       name: "!̸I̸m̸p̸u̸l̸s̸e̸",
-      role: "Founder & CEO",
+      role: "Founder & Manager @ Null Tools",
       description: "I would say, It's not worth it. (I still tried tho)"
     },
     {
-      name: "ais",
+      name: "xMatis",
       role: "CEO",
-      description: "text"
+      description: "CEO & Founder @ Virifo"
     },
     {
-      name: "vortex",
+      name: "Vivio",
       role: "CEO",
-      description: "Holy upload speed."
-    }
+      description: "COO @ Virifo"
+    },
   ]
 
   return (
