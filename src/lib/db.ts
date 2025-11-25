@@ -5,9 +5,8 @@ const globalForPrisma = globalThis as unknown as {
 }
 
 const createPrismaClient = () => {
-  if (!process.env.DATABASE_URL) {
-    console.error('DATABASE_URL is not set')
-    throw new Error('DATABASE_URL environment variable is required')
+  if (typeof window === 'undefined' && !process.env.DATABASE_URL) {
+    console.warn('DATABASE_URL is not set - database operations will fail')
   }
 
   return new PrismaClient({
