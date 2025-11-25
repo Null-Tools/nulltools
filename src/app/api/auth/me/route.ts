@@ -30,8 +30,17 @@ export async function GET(request: NextRequest) {
     )
   } catch (error) {
     console.error('Get user error:', error)
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      name: error instanceof Error ? error.name : undefined,
+    })
     return NextResponse.json(
-      { success: false, error: 'Internal server error' },
+      { 
+        success: false, 
+        error: 'Internal server error',
+        message: process.env.NODE_ENV === 'development' && error instanceof Error ? error.message : undefined
+      },
       { status: 500 }
     )
   }

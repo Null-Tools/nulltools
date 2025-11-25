@@ -41,6 +41,10 @@ export async function verifyPassword(password: string, hashedPassword: string): 
 }
 
 export function generateToken(payload: object): string {
+  if (!JWT_SECRET || JWT_SECRET === 'fallback-secret') {
+    throw new Error('JWT_SECRET is not configured')
+  }
+  
   const uniquePayload = {
     ...payload,
     jti: randomUUID(),

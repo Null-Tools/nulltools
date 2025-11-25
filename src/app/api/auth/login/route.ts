@@ -11,9 +11,16 @@ const loginSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    if (!process.env.JWT_SECRET) {
+      console.error('JWT_SECRET is not set')
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
     const body = await request.json()
     const { email, password } = loginSchema.parse(body)
-
 
     const user = await db.user.findUnique({
       where: { email },
@@ -150,8 +157,17 @@ export async function POST(request: NextRequest) {
     }
 
     console.error('Login error:', error)
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      name: error instanceof Error ? error.name : undefined,
+    })
+    
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { 
+        error: 'Internal server error',
+        message: process.env.NODE_ENV === 'development' && error instanceof Error ? error.message : undefined
+      },
       { status: 500 }
     )
   }

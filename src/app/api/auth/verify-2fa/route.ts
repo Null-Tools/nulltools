@@ -107,6 +107,17 @@ export async function POST(request: NextRequest) {
     return response
   } catch (error) {
     console.error('2FA verification error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      name: error instanceof Error ? error.name : undefined,
+    })
+    return NextResponse.json(
+      { 
+        error: 'Internal server error',
+        message: process.env.NODE_ENV === 'development' && error instanceof Error ? error.message : undefined
+      },
+      { status: 500 }
+    )
   }
 }
