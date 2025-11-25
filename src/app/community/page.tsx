@@ -46,7 +46,7 @@ export default function Community() {
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/Null-Tools",
+      href: "https://github.com/Null-Tools-Open",
       description: "Open source projects and contributions"
     }
   ]
@@ -234,7 +234,7 @@ export default function Community() {
               Join Discord
             </Link>
             <Link
-              href="https://github.com/Null-Tools"
+              href="https://github.com/Null-Tools-Open"
               className="px-6 py-3 bg-card border border-border rounded-lg text-text-primary hover:border-text-secondary/50 transition-colors font-semibold"
             >
               View on GitHub

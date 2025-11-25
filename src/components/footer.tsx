@@ -29,7 +29,7 @@ export function Footer() {
       links: [
         { name: 'Documentation', href: '/docs', status: undefined, enabled: false },
         { name: 'Community', href: '/community', status: undefined, enabled: false },
-        { name: 'Support', href: '/support', status: undefined, enabled: true },
+        // { name: 'Support', href: '/support', status: undefined, enabled: true },
       ]
     },
     {
@@ -44,7 +44,7 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/Null-Tools', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/Null-Tools-Open', label: 'GitHub' },
     { icon: Mail, href: 'mailto:contact@nulltools.xyz', label: 'Email' },
     { icon: X, href: 'https://x.com/NullToolsXYZ', label: 'X' },
   ]

@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/lib/generated/auth-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String    @id @default(cuid())
+  email              String    @unique
+  password           String
+  name               String?
+  isPremium          Boolean   @default(false)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  isPremiumDrop      Boolean   @default(false)
+  isPremiumMails     Boolean   @default(false)
+  isPremiumVault     Boolean   @default(false)
+  premiumTierDrop    String    @default("free")
+  premiumTierMails   String    @default("free")
+  premiumTierVault   String    @default("free")
+  twoFactorEnabled   Boolean   @default(false)
+  twoFactorSecret    String?
+  customStorageLimit Int?
+  customApiKeyLimit  Int?
+  isNullDropTeam     Boolean  @default(false)
+  accessFilesPreview Boolean  @default(false)
+  accessFilesDownload Boolean  @default(false)
+  nullDropTeamRole   String    @default("member")
+  customDomain       String?
+  customDomainVerified Boolean @default(false)
+  polarCustomerId   String?   @unique
+  polarSubscriptionId String?
+  polarSubscriptionStatus String?
+  sessions           Session[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}

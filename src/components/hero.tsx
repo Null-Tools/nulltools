@@ -123,7 +123,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.0 }}
         >
           <motion.a
-            href="https://github.com/Null-Tools"
+            href="https://github.com/Null-Tools-Open"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1, y: -2 }}

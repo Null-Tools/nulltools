@@ -1,26 +1,52 @@
 'use client'
 
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Users, Upload, Mail, Shield, TrendingUp, Globe } from 'lucide-react'
 
-const stats = [
-  {
-    icon: Users,
-    value: 0,
-    suffix: '',
-    label: 'Developers',
-    description: 'Trust our platform',
-    color: 'from-blue-500 to-cyan-500'
-  },
-  {
-    icon: Upload,
-    value: 0,
-    suffix: '',
-    label: 'Files Uploaded',
-    description: 'Securely processed',
-    color: 'from-purple-500 to-pink-500'
-  },
+export function Stats() {
+  const [statsData, setStatsData] = useState({
+    totalUsers: 0,
+    totalFiles: 0,
+  })
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await fetch('/api/stats/nulldrop', {
+          cache: 'no-store',
+        })
+        const data = await response.json()
+        if (data.success && data.data) {
+          setStatsData({
+            totalUsers: data.data.totalUsers || 0,
+            totalFiles: data.data.totalFiles || 0,
+          })
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error)
+      }
+    }
+    fetchStats()
+  }, [])
+
+  const stats = [
+    {
+      icon: Users,
+      value: statsData.totalUsers,
+      suffix: '',
+      label: 'Users',
+      description: 'Using our services',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Upload,
+      value: statsData.totalFiles,
+      suffix: '',
+      label: 'Files Uploaded',
+      description: 'Securely processed',
+      color: 'from-purple-500 to-pink-500'
+    },
   {
     icon: Mail,
     value: 0,
@@ -79,7 +105,6 @@ function AnimatedCounter({ value, duration = 2000 }: { value: number; duration?:
   return <span ref={nodeRef}>0</span>
 }
 
-export function Stats() {
   return (
     <section className="py-24 bg-gradient-to-b from-background/50 to-background relative overflow-hidden">
       <div className="absolute inset-0">
@@ -176,36 +201,6 @@ export function Stats() {
             )
           })}
         </div>
-
-        <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <div className="inline-flex items-center gap-4 bg-card/50 border border-border px-6 py-3 rounded-full">
-            <div className="flex -space-x-2">
-              {[
-                { bg: 'from-blue-500 to-cyan-500', initial: 'A' },
-                { bg: 'from-purple-500 to-pink-500', initial: 'B' },
-                { bg: 'from-green-500 to-emerald-500', initial: 'C' },
-                { bg: 'from-orange-500 to-red-500', initial: 'D' },
-                { bg: 'from-yellow-500 to-orange-500', initial: 'E' }
-              ].map((avatar, i) => (
-                <div
-                  key={i}
-                  className={`w-8 h-8 rounded-full bg-gradient-to-r ${avatar.bg} border-2 border-background flex items-center justify-center text-white text-xs font-bold`}
-                >
-                  {avatar.initial}
-                </div>
-              ))}
-            </div>
-            <span className="text-text-secondary text-sm">
-              Join thousands of satisfied developers
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

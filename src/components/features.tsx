@@ -9,8 +9,8 @@ const products = [
     id: 'nulldrop',
     title: 'Null drop',
     description: 'Upload, share, and manage your files with ease.',
-    icon: Upload,
-    iconType: 'lucide',
+    icon: '/nulldrop.png',
+    iconType: 'image',
     colors: 'from-blue-500 to-cyan-500',
     glowPosition: 'top-0 left-0'
   },
@@ -68,16 +68,17 @@ export function Features() {
                   <div className="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     {product.iconType === 'lucide' ? (
                       (() => {
-                        const Icon = product.icon as React.ComponentType<{ size: number; className: string }>;
-                        return <Icon size={64} className="text-text-primary group-hover:text-white transition-colors duration-300" />;
+                        const Icon = product.icon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+                        return <Icon className="w-16 h-16 text-text-primary group-hover:text-white transition-colors duration-300" />;
                       })()
                     ) : (
                       <Image
                         src={product.icon as string}
                         alt={product.title}
-                        width={64}
-                        height={64}
+                        width={80}
+                        height={80}
                         className="object-contain"
+                        unoptimized
                       />
                     )}
                   </div>

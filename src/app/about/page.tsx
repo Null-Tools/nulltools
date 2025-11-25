@@ -60,17 +60,17 @@ export default function About() {
     {
       name: "!̸I̸m̸p̸u̸l̸s̸e̸",
       role: "Founder & Manager @ Null Tools",
-      description: "I would say, It's not worth it. (I still tried tho)"
+      description: "Livin' life"
     },
     {
       name: "xMatis",
-      role: "CEO",
-      description: "CEO & Founder @ Virifo"
+      role: "CEO & Founder @ Virifo",
+      description: "Caffeine"
     },
     {
       name: "Vivio",
-      role: "CEO",
-      description: "COO @ Virifo"
+      role: "COO @ Virifo",
+      description: "Infrastructure Meets Innovation"
     },
   ]
 
@@ -229,58 +229,6 @@ export default function About() {
                 )}
               </motion.div>
             ))}
-          </div>
-        </motion.div>
-
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">BY THE NUMBERS</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="text-3xl md:text-4xl font-nothing text-text-primary mb-2">0+</div>
-              <div className="text-sm text-text-secondary">Active Developers</div>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="text-3xl md:text-4xl font-nothing text-text-primary mb-2">0+</div>
-              <div className="text-sm text-text-secondary">API Calls</div>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <div className="text-3xl md:text-4xl font-nothing text-text-primary mb-2">0+</div>
-              <div className="text-sm text-text-secondary">Countries</div>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className="text-3xl md:text-4xl font-nothing text-text-primary mb-2">0%</div>
-              <div className="text-sm text-text-secondary">Uptime</div>
-            </motion.div>
           </div>
         </motion.div>
 
