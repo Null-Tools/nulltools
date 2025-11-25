@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Clock, ArrowRight, User, FileText, Smartphone, Laptop, Rocket } from 'lucide-react'
 import { Footer } from '@/components/footer'
-import { getFeaturedPost, getRecentPosts, getAllTags, getTagCounts } from '@/lib/blog'
+import { getFeaturedPost, getRecentPosts, getAllTags, getTagCounts, type BlogPost } from '@/lib/blog'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -17,7 +17,7 @@ export default function Blog() {
 
   const recentPosts = activeCategory === "All Posts" 
     ? allRecentPosts.slice(0, 6)
-    : allRecentPosts.filter(post => post.tags.includes(activeCategory)).slice(0, 6)
+    : allRecentPosts.filter((post: BlogPost) => post.tags.includes(activeCategory)).slice(0, 6)
 
   const categories = [
     { name: "All Posts", count: totalPosts, active: activeCategory === "All Posts" },
@@ -102,7 +102,7 @@ export default function Blog() {
                   
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {featuredPost.tags.map((tag) => (
+                      {featuredPost.tags.map((tag: string) => (
                         <button 
                           key={tag} 
                           onClick={(e) => {
@@ -148,7 +148,7 @@ export default function Blog() {
             RECENT POSTS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {recentPosts.map((post, index) => (
+            {recentPosts.map((post: BlogPost, index: number) => (
               <div key={post.id} className="bg-gradient-to-br from-card/40 via-card/20 to-transparent border-2 border-white rounded-2xl overflow-hidden hover:border-text-secondary/50 transition-all group hover:scale-105 hover:-translate-y-1 duration-300">
                 <Link href={`/blog/${post.slug}`} className="block h-full">
                   {post.image ? (
@@ -176,7 +176,7 @@ export default function Blog() {
                   
                   <div className="p-6 flex flex-col h-full">
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {post.tags.slice(0, 2).map((tag) => (
+                      {post.tags.slice(0, 2).map((tag: string) => (
                         <button 
                           key={tag} 
                           onClick={(e) => {
