@@ -57,7 +57,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Only team members can login
     if (!user.isNullDropTeam) {
       return NextResponse.json(
         { error: 'Access denied. Only team members can login.' },

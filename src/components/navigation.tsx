@@ -175,21 +175,12 @@ export function Navigation() {
                       </div>
                       
                       <Link
-                        href="/settings"
+                        href="/dashboard"
                         className="flex items-center px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-accent transition-colors"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         <Settings size={16} className="mr-2" />
-                        Settings
-                      </Link>
-                      
-                      <Link
-                        href="/api-keys"
-                        className="flex items-center px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-accent transition-colors"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Key size={16} className="mr-2" />
-                        API Keys
+                        Dashboard
                       </Link>
                       
                       <button
@@ -296,18 +287,11 @@ export function Navigation() {
                             <p className={`text-xs text-text-secondary ${hidePersonalInfo ? 'filter blur-sm' : ''}`}>{blurEmail(user.email)}</p>
                           </div>
                           <Link
-                            href="/settings"
+                            href="/dashboard"
                             className="flex items-center px-4 py-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-white/10 transition-all duration-200 group"
                           >
                             <Settings size={18} className="mr-3" />
-                            <span className="font-medium">Settings</span>
-                          </Link>
-                          <Link
-                            href="/api-keys"
-                            className="flex items-center px-4 py-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-white/10 transition-all duration-200 group"
-                          >
-                            <Key size={18} className="mr-3" />
-                            <span className="font-medium">API Keys</span>
+                            <span className="font-medium">Dashboard</span>
                           </Link>
                           <button
                             onClick={handleLogout}
