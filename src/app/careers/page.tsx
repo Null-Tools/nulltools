@@ -42,44 +42,15 @@ export default function Careers() {
     }
   ]
 
-  const openPositions = [
-    {
-      title: "Senior Full Stack Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description: "Help us build the next generation of developer tools. Work on both frontend and backend systems.",
-      requirements: ["5+ years full-stack experience", "React/TypeScript", "Node.js/Python", "Cloud platforms"],
-      salary: "$140k - $180k"
-    },
-    {
-      title: "DevOps Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description: "Build and maintain our infrastructure that serves millions of API requests daily.",
-      requirements: ["Kubernetes experience", "AWS/GCP", "CI/CD pipelines", "Infrastructure as Code"],
-      salary: "$130k - $170k"
-    },
-    {
-      title: "Product Marketing Manager",
-      department: "Marketing",
-      location: "Remote",
-      type: "Full-time",
-      description: "Drive product marketing strategy and help developers discover our tools.",
-      requirements: ["3+ years product marketing", "Developer tools experience", "Content creation", "Analytics"],
-      salary: "$110k - $140k"
-    },
-    {
-      title: "Customer Success Engineer",
-      department: "Customer Success",
-      location: "Remote",
-      type: "Full-time",
-      description: "Help enterprise customers succeed with our APIs and build long-term relationships.",
-      requirements: ["Technical background", "Customer facing experience", "API knowledge", "Problem solving"],
-      salary: "$90k - $120k"
-    }
-  ]
+  const openPositions: Array<{
+    title: string
+    department: string
+    location: string
+    type: string
+    description: string
+    requirements: string[]
+    salary: string
+  }> = []
 
   const values = [
     {
@@ -127,16 +98,16 @@ export default function Careers() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-nothing text-text-primary mb-2">5,000+</div>
-              <div className="text-sm text-text-secondary">Developers Using Our Tools</div>
+              <div className="text-3xl font-nothing text-text-primary mb-2">-</div>
+              <div className="text-sm text-text-secondary"></div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-nothing text-text-primary mb-2">$2M</div>
-              <div className="text-sm text-text-secondary">Seed Funding Raised</div>
+              <div className="text-3xl font-nothing text-text-primary mb-2">2025</div>
+              <div className="text-sm text-text-secondary">Founded</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-nothing text-text-primary mb-2">Remote</div>
-              <div className="text-sm text-text-secondary">Work From Anywhere</div>
+              <div className="text-3xl font-nothing text-text-primary mb-2">Growing</div>
+              <div className="text-sm text-text-secondary">Small Team, Big Impact</div>
             </div>
           </div>
         </div>
@@ -161,68 +132,85 @@ export default function Careers() {
 
         <div className="mb-16">
           <h2 className="text-2xl font-nothing text-text-primary mb-8 tracking-wide text-center">OPEN POSITIONS</h2>
-          <div className="space-y-6">
-            {openPositions.map((position) => (
-              <div key={position.title} className="bg-card/30 border border-border rounded-2xl p-8">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
-                      <h3 className="text-xl font-nothing text-text-primary">{position.title}</h3>
-                      <span className="px-3 py-1 bg-card border border-border rounded-full text-xs text-text-secondary">
-                        {position.department}
-                      </span>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-text-secondary">
-                      <div className="flex items-center gap-1">
-                        <MapPin size={14} />
-                        <span>{position.location}</span>
+          {openPositions.length > 0 ? (
+            <div className="space-y-6">
+              {openPositions.map((position) => (
+                <div key={position.title} className="bg-card/30 border border-border rounded-2xl p-8">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        <h3 className="text-xl font-nothing text-text-primary">{position.title}</h3>
+                        <span className="px-3 py-1 bg-card border border-border rounded-full text-xs text-text-secondary">
+                          {position.department}
+                        </span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Clock size={14} />
-                        <span>{position.type}</span>
+                      
+                      <div className="flex flex-wrap gap-4 mb-4 text-sm text-text-secondary">
+                        <div className="flex items-center gap-1">
+                          <MapPin size={14} />
+                          <span>{position.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock size={14} />
+                          <span>{position.type}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <DollarSign size={14} />
+                          <span>{position.salary}</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <DollarSign size={14} />
-                        <span>{position.salary}</span>
+
+                      <p className="text-text-secondary mb-4 leading-relaxed">
+                        {position.description}
+                      </p>
+
+                      <div>
+                        <h4 className="text-sm font-semibold text-text-primary mb-2">Requirements:</h4>
+                        <ul className="text-sm text-text-secondary space-y-1">
+                          {position.requirements.map((req, reqIndex) => (
+                            <li key={reqIndex} className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 bg-text-secondary rounded-full flex-shrink-0"></div>
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 
-                    <p className="text-text-secondary mb-4 leading-relaxed">
-                      {position.description}
-                    </p>
-
-                    <div>
-                      <h4 className="text-sm font-semibold text-text-primary mb-2">Requirements:</h4>
-                      <ul className="text-sm text-text-secondary space-y-1">
-                        {position.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-text-secondary rounded-full flex-shrink-0"></div>
-                            {req}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex flex-col gap-3 lg:flex-shrink-0">
+                      <Link
+                        href={`mailto:careers@nulltools.xyz?subject=Application for ${position.title}`}
+                        className="px-6 py-3 bg-white text-black border-2 border-white rounded-lg hover:bg-gray-100 transition-colors font-semibold text-center"
+                      >
+                        Apply Now
+                      </Link>
+                      <Link
+                        href="#"
+                        className="px-6 py-3 bg-card border border-border rounded-lg text-text-primary hover:border-text-secondary/50 transition-colors font-semibold text-center"
+                      >
+                        Learn More
+                      </Link>
                     </div>
-                  </div>
-
-                  <div className="flex flex-col gap-3 lg:flex-shrink-0">
-                    <Link
-                      href={`mailto:careers@nulltools.xyz?subject=Application for ${position.title}`}
-                      className="px-6 py-3 bg-white text-black border-2 border-white rounded-lg hover:bg-gray-100 transition-colors font-semibold text-center"
-                    >
-                      Apply Now
-                    </Link>
-                    <Link
-                      href="#"
-                      className="px-6 py-3 bg-card border border-border rounded-lg text-text-primary hover:border-text-secondary/50 transition-colors font-semibold text-center"
-                    >
-                      Learn More
-                    </Link>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-card/30 border border-border rounded-2xl p-12 text-center">
+              <h3 className="text-xl font-nothing text-text-primary mb-4">No Open Positions at the Moment</h3>
+              <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
+                We're not actively hiring right now, but we're always interested in connecting with talented developers 
+                who share our passion for building great developer tools. If you think you'd be a great fit, 
+                feel free to reach out!
+              </p>
+              <Link
+                href="mailto:careers@nulltools.xyz?subject=General Application"
+                className="inline-block px-6 py-3 bg-white text-black border-2 border-white rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              >
+                Send Us Your Resume
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className="mb-16">

@@ -20,7 +20,7 @@ export function Footer() {
       links: [
         { name: 'About Us', href: '/about', status: undefined, enabled: true },
         { name: 'Blog', href: '/blog', status: undefined, enabled: true },
-        { name: 'Careers', href: '/careers', status: undefined, enabled: false },
+        { name: 'Careers', href: '/careers', status: undefined, enabled: true },
         { name: 'Press Kit', href: '/press', status: undefined, enabled: false },
       ]
     },
