@@ -21,6 +21,7 @@ export function Footer() {
         { name: 'About Us', href: '/about', status: undefined, enabled: true },
         { name: 'Blog', href: '/blog', status: undefined, enabled: true },
         { name: 'Careers', href: '/careers', status: undefined, enabled: true },
+        { name: 'Roadmap', href: '/roadmap', status: undefined, enabled: true },
         { name: 'Press Kit', href: '/press', status: undefined, enabled: false },
       ]
     },
