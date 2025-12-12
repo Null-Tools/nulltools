@@ -5,7 +5,7 @@ import { ArrowLeft, CheckCircle2, Circle, CircleDot } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Footer } from '@/components/footer'
 
-type TaskStatus = 'completed' | 'in-progress' | 'not-started'
+type TaskStatus = 'completed' | 'in-progress' | 'not-started' | 'ready-for-production'
 
 interface Task {
   title: string
@@ -31,13 +31,12 @@ export default function Roadmap() {
         { title: 'Null Pass Migration', status: 'completed' },
         { title: 'Avatar Migration', status: 'completed' },
         { title: 'Auth Expansion', status: 'not-started' },
-        { title: 'Advanced Search', status: 'in-progress' },
+        { title: 'Advanced Search', status: 'ready-for-production' },
         { title: 'UI Refresh', status: 'not-started' },
         { title: 'Mobile Experience Improvements', status: 'in-progress' },
-        { title: 'Firma Integration', status: 'not-started' },
-        { title: 'General Settings Data Shared With Null Pass', status: 'in-progress' },
+        { title: 'General Settings Data Shared With Null Pass', status: 'ready-for-production' },
         { title: 'Tags', status: 'in-progress' },
-        { title: 'More File Previews', status: 'in-progress' },
+        { title: 'More File Previews', status: 'ready-for-production' },
         { title: 'Python SDK', status: 'in-progress' },
         { title: 'C++ SDK', status: 'not-started' },
         { title: 'C SDK', status: 'not-started' },
@@ -133,6 +132,13 @@ export default function Roadmap() {
         )
       case 'not-started':
         return <Circle size={16} className="text-text-secondary/50" />
+      case 'ready-for-production':
+        return (
+          <div className="relative w-4 h-4 flex items-center justify-center">
+            <div className="absolute inset-0 bg-purple-500/20 rounded-full border border-purple-500/50" />
+            <div className="relative w-2 h-2 bg-purple-500 rounded-full animate-pulse shadow-[0_0_6px_rgba(168,85,247,0.6)]" />
+          </div>
+        )
     }
   }
 
@@ -189,6 +195,12 @@ export default function Roadmap() {
             <div className="flex items-center gap-2">
               <Circle size={16} className="text-text-secondary/50" />
               <span className="text-sm text-text-secondary">Not Started</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="relative w-4 h-4 flex items-center justify-center">
+                <div className="relative w-2 h-2 bg-purple-500 rounded-full shadow-[0_0_6px_rgba(168,85,247,0.6)]" />
+              </div>
+              <span className="text-sm text-text-secondary">Ready for Production</span>
             </div>
           </motion.div>
         </motion.div>
