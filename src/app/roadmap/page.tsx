@@ -34,7 +34,7 @@ export default function Roadmap() {
         { title: 'Advanced Search', status: 'in-progress' },
         { title: 'UI Refresh', status: 'not-started' },
         { title: 'Mobile Experience Improvements', status: 'in-progress' },
-        { title: 'Firma Integration', status: 'in-progress' },
+        { title: 'Firma Integration', status: 'not-started' },
         { title: 'Tags', status: 'in-progress' },
         { title: 'More File Previews', status: 'in-progress' },
         { title: 'Python SDK', status: 'in-progress' },
