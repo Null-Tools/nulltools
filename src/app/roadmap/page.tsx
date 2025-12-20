@@ -39,7 +39,7 @@ export default function Roadmap() {
         { title: 'More File Previews', status: 'completed' },
         { title: 'Python SDK', status: 'in-progress' },
         { title: 'Encrypt User Ips', status: 'completed' },
-        { title: 'C++ SDK', status: 'not-started' },
+        { title: 'C++ SDK', status: 'in-progress' },
         { title: 'C SDK', status: 'not-started' },
         { title: 'Feature Rich, Expanted Documentation', status: 'not-started' },
         { title: 'Folder System', status: 'not-started' },
@@ -104,7 +104,7 @@ export default function Roadmap() {
     {
       version: 'v4',
       title: 'Null Vault',
-      subtitle: 'Secure cyrpted payment processor',
+      subtitle: 'Secure crypto payment processor',
       progress: 0,
       tasks: [
         { title: 'Ideas Gathering', status: 'not-started' },
