@@ -133,7 +133,7 @@ export default function Roadmap() {
         { title: 'Text in Boxes', status: 'in-progress' },
         { title: 'Arrow Snap to Boxes', status: 'in-progress' },
         { title: 'Shift + Straight Drawing', status: 'completed' },
-        { title: 'Sticky Notes', status: 'in-progress' },
+        { title: 'Sticky Notes', status: 'completed' },
         { title: 'UI Improvements', status: 'completed' },
         { title: 'Workspaces System', status: 'completed' },
         { title: 'Movable Workspaces', status: 'completed' },
