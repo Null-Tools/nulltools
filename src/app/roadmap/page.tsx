@@ -45,8 +45,8 @@ export default function Roadmap() {
         { title: 'Folder System', status: 'not-started' },
         { title: 'More Connections', status: 'not-started' },
         { title: 'Global CDN', status: 'not-started' },
-        { title: 'Region Specific language support', status: 'not-started' },
-        { title: 'Code Refactor', status: 'not-started' }
+        { title: 'Region Specific language support', status: 'in-progress' },
+        { title: 'Code Refactor', status: 'in-progress' }
       ]
     },
     {
