@@ -184,7 +184,7 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-sm text-text-secondary">
-            <p>&copy; 2025 Null Tools. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Null Tools. All rights reserved.</p>
             <div className="hidden md:block">
               <iframe 
                 src="https://status.nulltools.xyz/badge?theme=dark" 
